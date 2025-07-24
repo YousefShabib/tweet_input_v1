@@ -24,8 +24,6 @@ submitBtn.addEventListener("click", () => {
     alert("Your message exceeds the 250 character limit.");
   } else {
     alert("Message sent successfully!");
-    // reset if needed:
-    // tweetInput.value = "";
-    // charCount.textContent = "0 / 250";
   }
 });
+
