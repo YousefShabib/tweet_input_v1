@@ -3,31 +3,54 @@ const charCount = document.getElementById("charCount");
 const submitBtn = document.getElementById("submitBtn");
 const maxChars = 250;
 
+
 tweetInput.addEventListener("input", () => {
   let inputLength = tweetInput.value.length;
 
+  if (inputLength === 0) {
+    submitBtn.classList.add("off");
+    submitBtn.disabled = true;
+  }
+   else 
+   {
+    submitBtn.classList.remove("off");
+    submitBtn.disabled = false;
+  }
+
   if (inputLength >= maxChars) {
     tweetInput.value = tweetInput.value.substring(0, maxChars);
-    inputLength = maxChars;
+    inputLength = maxChars; // تحديث العد بعد القطع
     tweetInput.classList.add("limit-reached");
     charCount.classList.add("limit-reached-text");
-  } else {
+  } 
+  else {
     tweetInput.classList.remove("limit-reached");
     charCount.classList.remove("limit-reached-text");
   }
 
   charCount.textContent = `${inputLength} / ${maxChars}`;
+
 });
 
 submitBtn.addEventListener("click", () => {
-  if (tweetInput.value.length > maxChars) {
+  const length = tweetInput.value.length;
+
+  if (length === 0) {
+    submitBtn.classList.add("off");
+    submitBtn.disabled = true;
+
+  } 
+
+  else if (length > maxChars) {
     alert("Your message exceeds the 250 character limit.");
-  } else {
+  } 
+
+  else {
     alert("Message sent successfully!");
+    submitBtn.classList.add("off");
+    submitBtn.disabled = true;
   }
 });
 
 
-// git add .
-// git commit -m "add new edit"
-// git push origin tweet_v1
+
