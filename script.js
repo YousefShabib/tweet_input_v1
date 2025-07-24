@@ -27,3 +27,7 @@ submitBtn.addEventListener("click", () => {
   }
 });
 
+
+// git add .
+// git commit -m "add new edit"
+// git push origin tweet_v1
