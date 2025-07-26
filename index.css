@@ -57,19 +57,23 @@ body {
   
   #submitBtn {
     margin-top: 1rem;
-    padding: 1.3rem 9rem;
+    padding: 1.3rem 6rem;
     font-size: 22px;
     background-color: #126bf1;
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 50px;
     cursor: pointer;
+  }
+  
+  #submitBtn.off {
+    background-color:#676767;
+    opacity: 1;
+    cursor: not-allowed;
   }
   
   #submitBtn:hover {
     background-color: #1464dd;
-    transform: translateY(-15px);
-
-
   }
   
+ 
